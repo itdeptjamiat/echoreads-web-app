@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useAuth } from '../../contexts/AuthContext';
 
 const MobileUserProfile: React.FC = () => {
   const { theme } = useTheme();
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   if (!user) return null;
 
@@ -32,6 +34,7 @@ const MobileUserProfile: React.FC = () => {
 
       {/* Subscription Button */}
       <button
+        onClick={() => navigate('/payment', { state: { returnUrl: window.location.pathname } })}
         className={`w-full flex items-center justify-center space-x-2 p-3 rounded-lg transition-all duration-200 ${
           theme === 'dark'
             ? 'bg-gray-800 text-primary-text hover:text-highlight-text'

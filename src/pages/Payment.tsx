@@ -19,7 +19,7 @@ const Payment: React.FC = () => {
   const plans = [
     {
       id: 'pro',
-      name: 'EchoPro',
+      name: 'Echo Plus',
       price: '$5',
       period: 'month',
       originalPrice: '$10',
@@ -42,7 +42,7 @@ const Payment: React.FC = () => {
     },
     {
       id: 'proplus',
-      name: 'EchoProPlus',
+      name: 'Echo Pro',
       price: '$10',
       period: 'month',
       originalPrice: '$20',

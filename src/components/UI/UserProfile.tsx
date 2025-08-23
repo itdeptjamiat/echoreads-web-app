@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useAuth } from '../../contexts/AuthContext';
 
 const UserProfile: React.FC = () => {
   const { theme } = useTheme();
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   if (!user) return null;
@@ -84,7 +86,7 @@ const UserProfile: React.FC = () => {
             <div className="p-2">
               <button
                 onClick={() => {
-                  // Navigate to subscription (you can add this later)
+                  navigate('/payment', { state: { returnUrl: window.location.pathname } });
                   setIsOpen(false);
                 }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-md transition-colors duration-200 ${

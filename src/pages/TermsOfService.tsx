@@ -150,8 +150,8 @@ const TermsOfService: React.FC = () => {
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
               <li><strong>Free Plan:</strong> Limited access to content with advertisements</li>
-              <li><strong>EchoPro Plan:</strong> Premium access to 8000+ magazines and enhanced features</li>
-              <li><strong>EchoPro Plus Plan:</strong> Ultimate reading experience with all premium features</li>
+                              <li><strong>Echo Plus Plan:</strong> Premium access to 8000+ magazines and enhanced features</li>
+                <li><strong>Echo Pro Plan:</strong> Ultimate reading experience with all premium features</li>
             </ul>
 
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
@@ -325,7 +325,7 @@ const TermsOfService: React.FC = () => {
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>EchoPro and EchoPro Plus plans include family sharing features</li>
+                              <li>Echo Plus and Echo Pro plans include family sharing features</li>
               <li>Family members must be added through the App's family sharing system</li>
               <li>Each family member maintains their own reading preferences and history</li>
               <li>Family sharing is subject to platform limitations and restrictions</li>
