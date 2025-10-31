@@ -162,7 +162,7 @@ const Footer: React.FC = () => {
                   ? 'text-primary-text hover:text-highlight-text' 
                   : 'text-light-primary-text hover:text-light-highlight-text'
               }`}>
-                Terms of Service
+                Terms of Use
               </Link>
             </div>
           </div>

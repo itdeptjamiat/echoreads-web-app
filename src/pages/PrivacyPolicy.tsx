@@ -17,35 +17,35 @@ const PrivacyPolicy: React.FC = () => {
           <h1 className={`text-4xl font-bold mb-4 transition-colors duration-300 ${
             theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
           }`}>
-            Privacy Policy for EchoReads
+            Privacy Policy — EchoReads
           </h1>
           <p className={`text-lg transition-colors duration-300 ${
             theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
           }`}>
-            Effective Date: {new Date().toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
+            Effective Date: 31 October 2025
           </p>
           <p className={`text-lg transition-colors duration-300 ${
             theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
           }`}>
-            Last Updated: {new Date().toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
+            Last Updated: 31 October 2025
           </p>
-          <div className={`mt-4 p-4 rounded-lg transition-colors duration-300 ${
-            theme === 'dark' ? 'bg-section-background' : 'bg-light-section-background'
+          <p className={`text-lg transition-colors duration-300 ${
+            theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
           }`}>
-            <p className={`text-sm transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <strong>Company:</strong> IJT | <strong>App:</strong> EchoReads | <strong>Website:</strong> https://echoreads.online
-            </p>
+            Version: 2.0
+          </p>
+          <div className={`mt-4 text-base transition-colors duration-300 ${
+            theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+          }`}>
+            <p><strong>Company (Data Controller):</strong> ECHO READS (PRIVATE) LIMITED ("EchoReads", "we", "us", "our")</p>
+            <p><strong>Website:</strong> https://echoreads.online</p>
+            <p><strong>Support:</strong> <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a></p>
           </div>
+          <p className={`mt-4 transition-colors duration-300 ${
+            theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+          }`}>
+            This Privacy Policy explains how we collect, use, disclose, and protect information about you when you use EchoReads on iOS, Android, and the web. By using EchoReads, you agree to this Policy. If you do not agree, please do not use the Service.
+          </p>
         </div>
 
         {/* Content */}
@@ -56,17 +56,22 @@ const PrivacyPolicy: React.FC = () => {
             <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              1. Introduction
+              1. Scope & Roles
             </h2>
             <p className={`mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              Welcome to EchoReads! This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you use our mobile application and related services. We are committed to protecting your privacy and ensuring transparency about our data practices.
+              This Policy applies to the EchoReads mobile apps and website, and related services and communications (the "Service").
+            </p>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Controller:</strong> ECHO READS (PRIVATE) LIMITED is the data controller for web purchases and account management.
             </p>
             <p className={`transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              By using EchoReads, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree with our policies and practices, please do not use our App.
+              <strong>Store Purchases:</strong> When you subscribe via Apple (iOS) or Google (Android), those stores act as independent controllers for billing and purchase records; we receive limited purchase status via our subscription management provider (RevenueCat) to grant entitlements.
             </p>
           </section>
 
@@ -80,226 +85,95 @@ const PrivacyPolicy: React.FC = () => {
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              2.1 Information You Provide to Us
+              2.1 Information You Provide
             </h3>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Account Information:
-            </h4>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Full name</li>
-              <li>Email address</li>
-              <li>Profile picture (optional)</li>
-              <li>Password (encrypted)</li>
-              <li>Account preferences and settings</li>
-            </ul>
-
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Profile Information:
-            </h4>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>Reading preferences</li>
-              <li>Content categories of interest</li>
-              <li>Language preferences</li>
-              <li>Theme preferences (light/dark mode)</li>
+              <li><strong>Account & Profile:</strong> name, email, password (hashed), profile image (optional), preferences (e.g., language, theme), communication preferences.</li>
+              <li><strong>Content Activity:</strong> bookmarks, reading lists, reading progress, saved downloads (device-local), likes/favourites.</li>
+              <li><strong>Support & Feedback:</strong> emails, in-app support messages, bug reports, survey responses, feature requests.</li>
+              <li><strong>Web Checkout (if available):</strong> limited payment details via our payment provider (we do not store full card numbers).</li>
             </ul>
 
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              2.2 Information We Collect Automatically
+              2.2 Information Collected Automatically
             </h3>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Device Information:
-            </h4>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Device type and model</li>
-              <li>Operating system version</li>
-              <li>Unique device identifiers</li>
-              <li>IP address</li>
-              <li>Mobile network information</li>
-              <li>Time zone and language settings</li>
+              <li><strong>Device & App:</strong> device model, OS/version, app version, device identifiers (e.g., IDFV/Android App Set ID), IP address, time zone, language, crash logs, diagnostics, performance metrics.</li>
+              <li><strong>Usage:</strong> screens viewed, taps/clicks, session duration, search queries, content opened, offline/online status, download events.</li>
+              <li><strong>Purchase Entitlements:</strong> subscription/product identifiers, transaction state, renewal status, period start/end (via RevenueCat and store APIs).</li>
             </ul>
 
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              App Usage Information:
-            </h4>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>App features used</li>
-              <li>Content accessed and read</li>
-              <li>Reading progress and bookmarks</li>
-              <li>Search queries</li>
-              <li>Time spent reading</li>
-              <li>App crashes and performance data</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              3. How We Use Your Information
-            </h2>
-            
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              3.1 Primary Uses
-            </h3>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Service Provision:
-            </h4>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>Creating and managing your account</li>
-              <li>Providing access to content and features</li>
-              <li>Processing subscriptions and payments</li>
-              <li>Delivering personalized content recommendations</li>
-              <li>Enabling offline reading capabilities</li>
-            </ul>
-
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              User Experience:
-            </h4>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>Personalizing your reading experience</li>
-              <li>Saving reading progress and preferences</li>
-              <li>Providing relevant content suggestions</li>
-              <li>Optimizing app performance and functionality</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              4. Information Sharing and Disclosure
-            </h2>
-            
-            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              4.1 We Do Not Sell Your Personal Information
+              2.3 Data We Do Not Intentionally Collect
             </h3>
             <p className={`mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              We do not sell, rent, or trade your personal information to third parties for their marketing purposes.
+              Precise geolocation, contact lists, SMS, calendars, or health data.
+            </p>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We do not track you across third-party apps/websites for targeted advertising.
             </p>
 
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              4.2 Information Sharing
+              2.4 Sources
             </h3>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <li>Directly from you;</li>
+              <li>Automatically from your device/app;</li>
+              <li>From Apple/Google (purchase confirmations/receipts) via RevenueCat;</li>
+              <li>From analytics/crash services (see Section 8).</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              Service Providers:
-            </h4>
+              3. How We Use Your Information (Purposes)
+            </h2>
             <p className={`mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              We may share your information with trusted third-party service providers who assist us in:
+              We use data to:
             </p>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Hosting and maintaining our services</li>
-              <li>Processing payments and subscriptions</li>
-              <li>Providing customer support</li>
-              <li>Analyzing app usage and performance</li>
-              <li>Delivering content and recommendations</li>
+              <li><strong>Provide the Service:</strong> create and secure your account; sync reading progress; enable search, recommendations, offline features.</li>
+              <li><strong>Subscription Management:</strong> verify purchases and entitlements, apply plan limits, manage renewals (via RevenueCat, Apple, Google).</li>
+              <li><strong>Personalisation:</strong> surface relevant magazines/articles/digests based on your activity and preferences.</li>
+              <li><strong>Performance & Quality:</strong> monitor crashes, fix bugs, improve stability and speed.</li>
+              <li><strong>Security & Fraud Prevention:</strong> detect misuse, suspicious activity, or unauthorised access.</li>
+              <li><strong>Customer Support & Communications:</strong> respond to queries, send service notifications (renewal reminders, policy updates).</li>
+              <li><strong>Compliance:</strong> meet legal, tax, accounting, and regulatory obligations.</li>
             </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              5. Data Security and Protection
-            </h2>
-            
-            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              5.1 Security Measures
-            </h3>
             <p className={`mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              We implement appropriate technical and organizational security measures to protect your personal information, including:
+              <strong>Legal bases (EEA/UK):</strong>
             </p>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Technical Security:
-            </h4>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Encryption of data in transit and at rest</li>
-              <li>Secure authentication and authorization</li>
-              <li>Regular security assessments and updates</li>
-              <li>Access controls and monitoring</li>
-            </ul>
-
-            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              5.2 Data Retention
-            </h3>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Account Data:
-            </h4>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>Retained while your account is active</li>
-              <li>Deleted upon account deletion (with exceptions for legal requirements)</li>
-            </ul>
-
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Usage Data:
-            </h4>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>Reading progress and preferences: Retained for service functionality</li>
-              <li>Analytics data: Retained for up to 2 years</li>
-              <li>Log files: Retained for up to 90 days</li>
+              <li>Contract (Art. 6(1)(b) GDPR) for providing the Service;</li>
+              <li>Legitimate interests (Art. 6(1)(f)) for analytics, security, improvement;</li>
+              <li>Consent (Art. 6(1)(a)) where required (e.g., non-essential cookies on web);</li>
+              <li>Legal obligation (Art. 6(1)(c)) for compliance duties.</li>
             </ul>
           </section>
 
@@ -307,121 +181,335 @@ const PrivacyPolicy: React.FC = () => {
             <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              6. Your Rights and Choices
+              4. Cookies & Similar Technologies (Web)
             </h2>
-            
-            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              6.1 Access and Control
-            </h3>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Account Information:
-            </h4>
+              We use:
+            </p>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>View and update your profile information</li>
-              <li>Change your password and security settings</li>
-              <li>Update your preferences and settings</li>
-              <li>Access your reading history and progress</li>
+              <li><strong>Essential cookies</strong> (login/session, fraud/security) – required for the site to work;</li>
+              <li><strong>Analytics cookies</strong> (aggregated usage metrics) – where required, used with your consent;</li>
+              <li><strong>Preference cookies</strong> (language/theme).</li>
             </ul>
-
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Data Deletion:
-            </h4>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+            <p className={`transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Delete your account completely: https://echoreads.online/delete-account</li>
-              <li>Request partial data deletion: https://echoreads.online/delete-data</li>
-              <li>Remove specific data categories</li>
-              <li>Export your data (where technically feasible)</li>
-            </ul>
+              You can manage cookies in your browser and (where provided) our cookie banner.
+            </p>
           </section>
 
           <section className="mb-8">
             <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              7. Children's Privacy
+              5. Sharing & Disclosures
             </h2>
             
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              7.1 Age Requirements
-            </h3>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>EchoReads is not intended for children under 13 years of age</li>
-              <li>We do not knowingly collect personal information from children under 13</li>
-              <li>If we become aware that we have collected such information, we will delete it promptly</li>
-            </ul>
-
-            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              7.2 Parental Controls
-            </h3>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              <li>Parents can set reading time limits and content restrictions</li>
-              <li>Family sharing features allow parental oversight</li>
-              <li>Content is curated to be appropriate for all ages</li>
-              <li>We recommend parental supervision for users under 18</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              8. Third-Party Services and Links
-            </h2>
-            
-            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              8.1 Third-Party Services
+              5.1 Service Providers (Processors)
             </h3>
             <p className={`mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              Our App may integrate with or link to third-party services, including:
+              We share data with trusted vendors who process it under our instructions:
             </p>
-            
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              Google Services:
-            </h4>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Google Play Store for app distribution</li>
-              <li>Google Analytics for app analytics</li>
-              <li>Google Cloud for hosting and infrastructure</li>
+              <li>Hosting/Infrastructure (e.g., cloud hosting, CDN)</li>
+              <li>Subscription Management: RevenueCat (purchase status & entitlements)</li>
+              <li>Crash & Diagnostics (e.g., platform crash reporters)</li>
+              <li>Analytics (aggregated app/web metrics)</li>
+              <li>Email/SMS (transactional support messages)</li>
+              <li>Support Tools (ticketing, in-app help)</li>
             </ul>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We require appropriate confidentiality, security, and data protection commitments from these providers.
+            </p>
 
-            <h4 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
+            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              Content Providers:
-            </h4>
+              5.2 App Stores (Independent Controllers)
+            </h3>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              Apple App Store and Google Play process your payments and store purchase history. We receive limited purchase/receipt metadata to activate your plan.
+            </p>
+
+            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              5.3 Legal, Safety & Business Transfers
+            </h3>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We may disclose information if required by law, to protect users, investigate fraud, or in a merger, acquisition, or sale of assets (subject to standard protections).
+            </p>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We do not sell or rent your personal information for marketing.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              6. Data Retention
+            </h2>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Magazine and article publishers</li>
-              <li>Educational content providers</li>
-              <li>Media distribution services</li>
+              <li><strong>Account data:</strong> kept while your account is active; deleted when you delete your account (subject to legally required retention).</li>
+              <li><strong>Usage analytics:</strong> up to 24 months (aggregated or pseudonymised where feasible).</li>
+              <li><strong>Crash logs/diagnostics:</strong> typically 90–180 days.</li>
+              <li><strong>Purchase/entitlement records:</strong> retained as required for accounting, tax, and anti-fraud (generally 6–10 years under applicable law).</li>
+            </ul>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We retain only as long as necessary for the purposes set out in this Policy.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              7. Security
+            </h2>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We implement technical and organisational measures including:
+            </p>
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <li>Encryption in transit (TLS) and at rest (where supported by our providers);</li>
+              <li>Least-privileged access controls, audit logging;</li>
+              <li>Secrets management and secure development practices;</li>
+              <li>Routine patching and vulnerability management.</li>
+            </ul>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              No method of transmission or storage is 100% secure; we cannot guarantee absolute security.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              8. Third-Party Services & SDKs
+            </h2>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              Depending on your platform and region, the app or website may use:
+            </p>
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <li><strong>RevenueCat</strong> (entitlement syncing; receives purchase tokens/receipts and anonymised device identifiers to manage subscriptions)</li>
+              <li><strong>Crash & diagnostics</strong> (e.g., platform crash reporting services)</li>
+              <li><strong>Analytics</strong> (aggregated usage metrics; we do not build advertising profiles)</li>
+              <li><strong>Email/Support</strong> (ticketing and email delivery)</li>
+            </ul>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We provide links to third-party policies upon request. Their handling of your data is governed by their own privacy terms when they act as controllers (e.g., Apple/Google for payments).
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              9. Your Rights & Choices
+            </h2>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              Depending on your location, you may have rights to:
+            </p>
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <li>Access your data and get a copy (data portability where applicable);</li>
+              <li>Correct inaccurate or incomplete data;</li>
+              <li>Delete your data (erasure);</li>
+              <li>Restrict or object to certain processing;</li>
+              <li>Withdraw consent (where processing is based on consent);</li>
+              <li>Lodge a complaint with your supervisory authority.</li>
+            </ul>
+            <p className={`mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>How to exercise:</strong>
+            </p>
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <li>Manage profile and preferences in-app;</li>
+              <li>Delete account: <a href="https://echoreads.online/delete-account" target="_blank" rel="noopener noreferrer" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>https://echoreads.online/delete-account</a></li>
+              <li>Request data export/erasure: <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a></li>
+            </ul>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>CCPA/CPRA (California):</strong> We do not "sell" or "share" personal information for cross-context behavioural advertising. You may exercise access/deletion rights via <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a>.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              10. Children's Privacy
+            </h2>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              EchoReads is not intended for children under 13 (or the minimum age in your jurisdiction); we do not knowingly collect personal data from children under that age.
+            </p>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              If we learn a child's data was collected in error, we will delete it.
+            </p>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Family Sharing:</strong> not currently supported. Parents/guardians should supervise minor use.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              11. International Transfers
+            </h2>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We may transfer data to countries outside your own (e.g., to cloud providers). Where required, we use appropriate safeguards such as Standard Contractual Clauses, and implement supplementary measures to protect your data.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              12. Platform-Specific Notices
+            </h2>
+            
+            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              12.1 Apple iOS (Purpose Strings & Permissions)
+            </h3>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We request certain iOS permissions only to support specific features. Examples of how we use them (and wording you will see in permission prompts):
+            </p>
+            <p className={`mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Camera (if enabled):</strong> "EchoReads uses the camera to let you upload or change your profile photo (and to scan a QR code for sign-in if you choose). Photos are not used for any other purpose."
+            </p>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Microphone (only if a voice feature is enabled in your region):</strong> "EchoReads uses the microphone to enable optional voice features (e.g., voice notes or voice search). Audio is processed only to provide this feature."
+            </p>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              You can change permissions at any time in iOS Settings.
+            </p>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Note for Users:</strong> If a feature requiring camera/microphone isn't available in your region or account, the app will not request that permission.
+            </p>
+
+            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              12.2 Google Play (Android)
+            </h3>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              Payments are processed by Google. Manage subscriptions in the Play Store. You can review app permissions in Android Settings at any time.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              13. Region-Specific Disclosures
+            </h2>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>EEA/UK:</strong> You have GDPR/UK GDPR rights set out in Section 9. Our lawful bases are listed in Section 3. You may contact your data protection authority (e.g., ICO in the UK) if you have concerns.
+            </p>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>US (California):</strong> see Section 9 (CCPA/CPRA).
+            </p>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>China mainland:</strong> If EchoReads is distributed there, some features/content may be restricted to comply with local publication rules (see Terms of Use). Personal data may be processed in accordance with applicable local law.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              14. Changes to this Policy
+            </h2>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              We may update this Policy to reflect changes to our practices, technologies, or legal requirements. We will update the "Last Updated" date and, where required, notify you (e.g., in-app or by email). Continued use after the effective date means you accept the updated Policy.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              15. Contact Us
+            </h2>
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <li><strong>Privacy:</strong> <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a></li>
+              <li><strong>Legal:</strong> <a href="mailto:legal@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>legal@echoreads.online</a></li>
+              <li><strong>Support:</strong> https://echoreads.online</li>
             </ul>
           </section>
 
@@ -429,93 +517,126 @@ const PrivacyPolicy: React.FC = () => {
             <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              9. Changes to This Privacy Policy
+              Developer Implementation Appendix (for App Store/Play review)
             </h2>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              This section is informational for store reviewers and your engineering team. It is part of the public page to satisfy transparency and reduce back-and-forth during review.
+            </p>
             
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              9.1 Policy Updates
+              A. iOS Info.plist Purpose Strings (copy verbatim if accurate)
             </h3>
-            <p className={`mb-3 transition-colors duration-300 ${
+            <p className={`mb-4 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              We may update this Privacy Policy from time to time to reflect:
+              If your build includes these features, set these exact strings:
             </p>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+            <p className={`mb-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li>Changes in our data practices</li>
-              <li>New features and services</li>
-              <li>Legal and regulatory requirements</li>
-              <li>Industry best practices</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              10. Contact Information
-            </h2>
-            
-            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
-            }`}>
-              10.1 Privacy Inquiries
-            </h3>
-            <p className={`mb-3 transition-colors duration-300 ${
-              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
-            }`}>
-              For questions about this Privacy Policy or our data practices:
+              <strong>NSCameraUsageDescription</strong>
             </p>
-            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+            <p className={`mb-4 italic transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li><strong>Email:</strong> privacy@echoreads.online</li>
-              <li><strong>Website:</strong> https://echoreads.online/privacy-policy</li>
-              <li><strong>In-App Support:</strong> Available through the App's help section</li>
-            </ul>
+              "EchoReads uses the camera to let you upload or change your profile photo (and to scan a QR code for sign-in if you choose). Photos are not used for any other purpose."
+            </p>
+            <p className={`mb-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>NSMicrophoneUsageDescription</strong> (only if a voice feature is shipped)
+            </p>
+            <p className={`mb-4 italic transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              "EchoReads uses the microphone to enable optional voice features (e.g., voice notes or voice search). Audio is processed only to provide this feature."
+            </p>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              If you do not currently ship a microphone-based feature, remove the microphone permission from the app to avoid rejection under 5.1.1.
+            </p>
 
             <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              10.2 Legal Inquiries
+              B. App Store Privacy "Nutrition Label" — Suggested Mapping
+            </h3>
+            <p className={`mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Data Linked to You (examples):</strong>
+            </p>
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <li>Contact Info: email</li>
+              <li>Identifiers: device/app identifiers (IDFV/App Set ID), IP (transient)</li>
+              <li>Usage Data: product interaction, diagnostics/crash</li>
+              <li>Purchases: subscription status, product IDs, renewal dates (via RevenueCat/store)</li>
+            </ul>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Purposes:</strong> App Functionality, Analytics, Account Management, Fraud Prevention.
+            </p>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              <strong>Tracking:</strong> We do not track users across third-party apps/sites for ads.
+            </p>
+
+            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              C. Google Play "Data safety" — Typical Selections
+            </h3>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              Collected: email, user IDs, app interactions, crash logs, diagnostics, device identifiers, purchase history/entitlements.
+            </p>
+            <p className={`mb-4 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              Shared: not for advertising; shared only with processors (e.g., RevenueCat, analytics, crash) to provide functionality.
+            </p>
+            <p className={`transition-colors duration-300 ${
+              theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
+            }`}>
+              Data is encrypted in transit; you can request deletion; collection is required for app functionality (entitlements) and for analytics (optional/aggregated, where applicable).
+            </p>
+
+            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+              theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
+            }`}>
+              D. Subscription & Entitlements Architecture
             </h3>
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li><strong>Email:</strong> legal@echoreads.online</li>
+              <li>Processor: Apple/Google (billing).</li>
+              <li>Entitlement orchestration: RevenueCat (no direct charging).</li>
+              <li>Server validation: Validate against production first; on error 21007, validate sandbox (TestFlight).</li>
+              <li>In-app disclosures: Show plan name, price, 1-month auto-renewing, 24-hour renewal notice, and how to cancel (links to Settings paths).</li>
             </ul>
-          </section>
 
-          {/* Final Notice */}
-          <div className={`p-6 rounded-lg border-2 transition-colors duration-300 ${
-            theme === 'dark' ? 'bg-section-background border-accent-gold' : 'bg-light-section-background border-accent-gold'
-          }`}>
-            <p className={`text-center font-semibold transition-colors duration-300 ${
+            <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
             }`}>
-              By using EchoReads, you acknowledge that you have read and understood this Privacy Policy and consent to our data practices as described herein.
-            </p>
-            <div className={`text-center mt-4 text-sm transition-colors duration-300 ${
+              Versioning & Review
+            </h3>
+            <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <p><strong>Company:</strong> IJT</p>
-              <p><strong>App:</strong> EchoReads</p>
-              <p><strong>Version:</strong> 1.0</p>
-              <p><strong>Last Updated:</strong> {new Date().toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}</p>
-              <p><strong>Next Review:</strong> {new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}</p>
-            </div>
-          </div>
+              <li>Document URL for stores: https://echoreads.online/privacy-policy</li>
+              <li>Next Review: 31 October 2026 (or earlier if functionality or vendors change).</li>
+            </ul>
+          </section>
         </div>
 
         {/* Footer Links - Only Public Links */}
@@ -527,7 +648,7 @@ const PrivacyPolicy: React.FC = () => {
                 theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'
               }`}
             >
-              Terms of Service
+              Terms of Use
             </Link>
             <Link
               to="/"

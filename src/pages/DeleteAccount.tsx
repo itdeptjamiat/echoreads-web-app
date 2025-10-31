@@ -286,7 +286,7 @@ const DeleteAccount: React.FC = () => {
                 theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'
               }`}
             >
-              Terms of Service
+              Terms of Use
             </Link>
             <Link
               to="/"
