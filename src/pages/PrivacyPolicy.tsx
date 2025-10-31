@@ -39,7 +39,7 @@ const PrivacyPolicy: React.FC = () => {
           }`}>
             <p><strong>Company (Data Controller):</strong> ECHO READS (PRIVATE) LIMITED ("EchoReads", "we", "us", "our")</p>
             <p><strong>Website:</strong> https://echoreads.online</p>
-            <p><strong>Support:</strong> <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a></p>
+            <p><strong>Support:</strong> <a href="mailto:support@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>support@echoreads.online</a></p>
           </div>
           <p className={`mt-4 transition-colors duration-300 ${
             theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
@@ -367,12 +367,12 @@ const PrivacyPolicy: React.FC = () => {
             }`}>
               <li>Manage profile and preferences in-app;</li>
               <li>Delete account: <a href="https://echoreads.online/delete-account" target="_blank" rel="noopener noreferrer" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>https://echoreads.online/delete-account</a></li>
-              <li>Request data export/erasure: <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a></li>
+              <li>Request data export/erasure: <a href="mailto:support@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>support@echoreads.online</a></li>
             </ul>
             <p className={`transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <strong>CCPA/CPRA (California):</strong> We do not "sell" or "share" personal information for cross-context behavioural advertising. You may exercise access/deletion rights via <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a>.
+              <strong>CCPA/CPRA (California):</strong> We do not "sell" or "share" personal information for cross-context behavioural advertising. You may exercise access/deletion rights via <a href="mailto:support@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>support@echoreads.online</a>.
             </p>
           </section>
 
@@ -507,7 +507,7 @@ const PrivacyPolicy: React.FC = () => {
             <ul className={`list-disc pl-6 mb-4 space-y-2 transition-colors duration-300 ${
               theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
             }`}>
-              <li><strong>Privacy:</strong> <a href="mailto:privacy@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>privacy@echoreads.online</a></li>
+              <li><strong>Privacy:</strong> <a href="mailto:support@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>support@echoreads.online</a></li>
               <li><strong>Legal:</strong> <a href="mailto:legal@echoreads.online" className={`underline ${theme === 'dark' ? 'text-accent-gold' : 'text-accent-gold'}`}>legal@echoreads.online</a></li>
               <li><strong>Support:</strong> https://echoreads.online</li>
             </ul>

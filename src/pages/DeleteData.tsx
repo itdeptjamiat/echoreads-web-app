@@ -214,7 +214,7 @@ const DeleteData: React.FC = () => {
               <p className={`mb-2 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
               }`}>
-                <strong>Email:</strong> privacy@echoreads.online
+                <strong>Email:</strong> support@echoreads.online
               </p>
               <p className={`mb-2 transition-colors duration-300 ${
                 theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
@@ -302,7 +302,7 @@ const DeleteData: React.FC = () => {
                 <p className={`transition-colors duration-300 ${
                   theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
                 }`}>
-                  privacy@echoreads.online
+                  support@echoreads.online
                 </p>
               </div>
               <div>
