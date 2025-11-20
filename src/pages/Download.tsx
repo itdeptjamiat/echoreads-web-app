@@ -69,9 +69,9 @@ const Download: React.FC = () => {
         subtitle="Get Started Today"
         description="Join millions of readers who have discovered the perfect way to consume magazines, articles, and digests. Download now and start your reading journey."
         primaryButtonText="Download for iOS"
-        primaryButtonLink="#ios-download"
+        primaryButtonLink="https://apps.apple.com/my/app/echoreads/id6754093803"
         secondaryButtonText="Download for Android"
-        secondaryButtonLink="#android-download"
+        secondaryButtonLink="https://play.google.com/store/apps/details?id=com.iqbal.echoreads&hl=en"
       />
 
       {/* App Preview Section */}
