@@ -1,0 +1,16 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error", "info", "log"] }],
+    "react/no-unescaped-entities": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["lib/logger.ts"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}
+
