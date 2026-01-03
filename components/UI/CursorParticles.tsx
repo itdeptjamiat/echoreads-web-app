@@ -46,6 +46,7 @@ const CursorParticles: React.FC = () => {
   const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
   
   // Mouse position with smooth interpolation
   const mousePos = useRef({ x: 0, y: 0 });
@@ -64,7 +65,8 @@ const CursorParticles: React.FC = () => {
   }>>([]);
 
   /**
-   * Check if device is mobile/touch (SSR-safe)
+   * Check if device is mobile/touch and screen size (SSR-safe)
+   * Particles only show on large screens (desktop) with mouse interaction
    */
   useEffect(() => {
     setIsMounted(true);
@@ -75,7 +77,24 @@ const CursorParticles: React.FC = () => {
         (window.matchMedia && window.matchMedia('(pointer: coarse)').matches)
       );
     };
+    const checkLargeScreen = () => {
+      // Only show on screens 1024px and wider (large screens/desktop)
+      return window.innerWidth >= 1024;
+    };
+    
     setIsTouchDevice(checkMobile());
+    setIsLargeScreen(checkLargeScreen());
+    
+    // Listen for screen size changes
+    const handleResize = () => {
+      setIsLargeScreen(checkLargeScreen());
+    };
+    
+    window.addEventListener('resize', handleResize, { passive: true });
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   /**
@@ -338,10 +357,9 @@ const CursorParticles: React.FC = () => {
     // Clear canvas for fresh frame
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Update particles based on device type
-    if (isTouchDevice) {
-      updateParticlesMobile();
-    } else {
+    // Only update particles on desktop (large screens with mouse)
+    // Mobile is handled by early return in render
+    if (!isTouchDevice && isLargeScreen) {
       updateParticlesDesktop();
     }
 
@@ -381,7 +399,7 @@ const CursorParticles: React.FC = () => {
 
     // Continue animation loop
     animationFrameRef.current = requestAnimationFrame(animate);
-  }, [updateParticlesDesktop, updateParticlesMobile, getParticleColor, isTouchDevice]);
+  }, [updateParticlesDesktop, getParticleColor, isTouchDevice, isLargeScreen]);
 
   /**
    * Handle mouse movement
@@ -430,95 +448,57 @@ const CursorParticles: React.FC = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       
-      // Recreate mobile particles on resize
-      if (isTouchDevice && particles.current.length === 0) {
-        createMobileParticles();
-      }
     };
 
     resizeCanvas();
 
-    if (isTouchDevice) {
-      // Mobile: Create particles that respond to touch
-      createMobileParticles();
-      
-      // Touch event handlers for mobile - particles move towards touch position
-      const touchMoveHandler = (e: TouchEvent) => {
-        if (e.touches.length > 0) {
-          const touch = e.touches[0];
-          targetPos.current.x = touch.clientX;
-          targetPos.current.y = touch.clientY;
-          // Update mouse position immediately for particle attraction
-          mousePos.current.x = touch.clientX;
-          mousePos.current.y = touch.clientY;
-        }
-      };
-      
-      const touchEndHandler = () => {
-        // Reset to center when touch ends
-        targetPos.current.x = window.innerWidth / 2;
-        targetPos.current.y = window.innerHeight / 2;
-      };
-      
-      // Initialize to center
-      targetPos.current.x = window.innerWidth / 2;
-      targetPos.current.y = window.innerHeight / 2;
-      mousePos.current.x = targetPos.current.x;
-      mousePos.current.y = targetPos.current.y;
-      
-      window.addEventListener('resize', resizeCanvas, { passive: true });
-      window.addEventListener('touchmove', touchMoveHandler, { passive: true });
-      window.addEventListener('touchend', touchEndHandler, { passive: true });
-      
-      // Start animation loop for mobile
-      animationFrameRef.current = requestAnimationFrame(animate);
-      
+    // Only initialize particles on large screens (desktop) with mouse interaction
+    // Skip mobile and small screens entirely - return early if conditions not met
+    if (isTouchDevice || !isLargeScreen) {
       return () => {
-        window.removeEventListener('resize', resizeCanvas);
-        window.removeEventListener('touchmove', touchMoveHandler);
-        window.removeEventListener('touchend', touchEndHandler);
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-        }
-      };
-    } else {
-      // Desktop: Mouse-following particles
-      window.addEventListener('resize', resizeCanvas, { passive: true });
-
-      // Mouse event handlers
-      const mouseMoveHandler = (e: MouseEvent) => handleMouseMove(e);
-      const mouseLeaveHandler = () => handleMouseLeave();
-      
-      window.addEventListener('mousemove', mouseMoveHandler, { passive: true });
-      window.addEventListener('mouseleave', mouseLeaveHandler, { passive: true });
-
-      // Initialize mouse position to center of screen
-      targetPos.current.x = window.innerWidth / 2;
-      targetPos.current.y = window.innerHeight / 2;
-      mousePos.current.x = targetPos.current.x;
-      mousePos.current.y = targetPos.current.y;
-
-      // Create initial particles for desktop
-      createInitialDesktopParticles();
-
-      // Start animation loop for desktop
-      animationFrameRef.current = requestAnimationFrame(animate);
-
-      // Cleanup
-      return () => {
-        window.removeEventListener('resize', resizeCanvas);
-        window.removeEventListener('mousemove', mouseMoveHandler);
-        window.removeEventListener('mouseleave', mouseLeaveHandler);
-        
         if (animationFrameRef.current) {
           cancelAnimationFrame(animationFrameRef.current);
         }
       };
     }
-      }, [isMounted, isTouchDevice, handleMouseMove, handleMouseLeave, animate, createMobileParticles, createInitialDesktopParticles]);
 
-  // Don't render before mount
-  if (!isMounted) {
+    // Desktop large screen: Mouse-following particles
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+
+    // Mouse event handlers
+    const mouseMoveHandler = (e: MouseEvent) => handleMouseMove(e);
+    const mouseLeaveHandler = () => handleMouseLeave();
+    
+    window.addEventListener('mousemove', mouseMoveHandler, { passive: true });
+    window.addEventListener('mouseleave', mouseLeaveHandler, { passive: true });
+
+    // Initialize mouse position to center of screen
+    targetPos.current.x = window.innerWidth / 2;
+    targetPos.current.y = window.innerHeight / 2;
+    mousePos.current.x = targetPos.current.x;
+    mousePos.current.y = targetPos.current.y;
+
+    // Create initial particles for desktop
+    createInitialDesktopParticles();
+
+    // Start animation loop for desktop
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('mousemove', mouseMoveHandler);
+      window.removeEventListener('mouseleave', mouseLeaveHandler);
+      
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+      }, [isMounted, isTouchDevice, isLargeScreen, handleMouseMove, handleMouseLeave, animate, createInitialDesktopParticles]);
+
+  // Don't render before mount, on mobile devices, or on small screens
+  // Only show particles on large screens (desktop) with mouse interaction
+  if (!isMounted || isTouchDevice || !isLargeScreen) {
     return null;
   }
 
@@ -527,9 +507,8 @@ const CursorParticles: React.FC = () => {
       ref={canvasRef}
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-[9999]"
       style={{
-        // On mobile, use normal blend mode for better visibility
         // On desktop, use subtle blend mode for dark mode, multiply for better contrast in light mode
-        mixBlendMode: isTouchDevice ? 'normal' : (theme === 'dark' ? 'screen' : 'multiply'),
+        mixBlendMode: theme === 'dark' ? 'screen' : 'multiply',
         opacity: 1,
       }}
       aria-hidden="true"
