@@ -44,25 +44,25 @@ const PricingClient: React.FC = () => {
     international: {
       plus: {
         monthly: { price: 5, currency: '$', period: 'month' },
-        sixmonth: { price: 25, currency: '$', period: '6 months', discount: 10 },
-        yearly: { price: 50, currency: '$', period: 'year', discount: 10 }
+        sixmonth: { price: 25, currency: '$', period: '6 months', discount: 17 },
+        yearly: { price: 50, currency: '$', period: 'year', discount: 17 }
       },
       pro: {
         monthly: { price: 10, currency: '$', period: 'month' },
-        sixmonth: { price: 50, currency: '$', period: '6 months', discount: 10 },
-        yearly: { price: 100, currency: '$', period: 'year', discount: 10 }
+        sixmonth: { price: 50, currency: '$', period: '6 months', discount: 17 },
+        yearly: { price: 100, currency: '$', period: 'year', discount: 17 }
       }
     },
     pakistan: {
       plus: {
         monthly: { price: 300, currency: 'PKR', period: 'month' },
-        sixmonth: { price: 1500, currency: 'PKR', period: '6 months', discount: 10 },
-        yearly: { price: 3000, currency: 'PKR', period: 'year', discount: 10 }
+        sixmonth: { price: 1500, currency: 'PKR', period: '6 months', discount: 17 },
+        yearly: { price: 3000, currency: 'PKR', period: 'year', discount: 17 }
       },
       pro: {
         monthly: { price: 500, currency: 'PKR', period: 'month' },
-        sixmonth: { price: 2500, currency: 'PKR', period: '6 months', discount: 10 },
-        yearly: { price: 5000, currency: 'PKR', period: 'year', discount: 10 }
+        sixmonth: { price: 2500, currency: 'PKR', period: '6 months', discount: 17 },
+        yearly: { price: 5000, currency: 'PKR', period: 'year', discount: 17 }
       }
     }
   };

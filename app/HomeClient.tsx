@@ -160,6 +160,54 @@ const HomeClient: React.FC = () => {
     }
   ];
 
+  // Children's Digests data
+  const childrenDigests: Magazine[] = [
+    {
+      id: 'adventures-wonderland',
+      title: 'Adventures in Wonderland',
+      description: 'A magical journey through enchanting stories that spark imagination and creativity. This delightful digest features colorful characters, exciting adventures, and valuable life lessons that inspire young readers to dream big and explore the world around them.',
+      imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1755120079051-v3eqssv4yw.jpg',
+      category: 'Children',
+      views: 15200,
+      likes: 1120,
+      rating: 4.9,
+      date: '2024-01-20'
+    },
+    {
+      id: 'fun-learning-stories',
+      title: 'Fun Learning Stories',
+      description: 'Educational tales that make learning enjoyable and engaging for young minds. This digest combines fun narratives with important concepts, helping children develop reading skills while discovering new ideas about science, nature, friendship, and everyday adventures.',
+      imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1754468368740-6v5vpx5w3li.jpg',
+      category: 'Children',
+      views: 18900,
+      likes: 1450,
+      rating: 4.8,
+      date: '2024-02-15'
+    },
+    {
+      id: 'magical-tales-collection',
+      title: 'Magical Tales Collection',
+      description: 'Enchanting stories filled with wonder, friendship, and adventure. This collection brings together timeless tales that capture the hearts of young readers, featuring brave heroes, magical creatures, and exciting quests that teach important values like kindness, courage, and empathy.',
+      imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1754705416524-jgx366ewqks.jpg',
+      category: 'Children',
+      views: 22100,
+      likes: 1780,
+      rating: 5.0,
+      date: '2024-03-10'
+    },
+    {
+      id: 'kids-corner-adventures',
+      title: 'Kids Corner Adventures',
+      description: 'Exciting stories designed to inspire young minds and foster curiosity. This digest features age-appropriate content that encourages exploration, creativity, and learning through engaging narratives, interactive elements, and beautiful illustrations that make reading a joyful experience.',
+      imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1754705612592-h11yf0v64wq.jpg',
+      category: 'Children',
+      views: 16700,
+      likes: 1320,
+      rating: 4.7,
+      date: '2024-04-05'
+    }
+  ];
+
   const formatNumber = (num: number) => {
     if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
     return num.toString();
@@ -194,7 +242,7 @@ const HomeClient: React.FC = () => {
         const groupSize = Math.ceil(magazines.length / 3);
         const group1 = magazines.slice(0, groupSize);
         const group2 = magazines.slice(groupSize, groupSize * 2);
-        const group3 = magazines.slice(groupSize * 2);
+        const group3 = magazines.slice(groupSize * 2, groupSize * 2 + 3);
 
         return (
           <>
@@ -286,7 +334,7 @@ const HomeClient: React.FC = () => {
               </div>
             </section>
 
-            {/* Layout 2: Horizontal Cards - Second Group */}
+            {/* Layout 2: Children's Digests Section */}
             <section className={`py-8 sm:py-12 lg:py-16 transition-colors duration-300 ${
               theme === 'dark' 
                 ? 'bg-section-background' 
@@ -297,20 +345,20 @@ const HomeClient: React.FC = () => {
                   <h2 className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 transition-colors duration-300 ${
                     theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
                   }`}>
-                    Trending Now
+                    Kids Corner
                   </h2>
                   <p className={`text-sm sm:text-base lg:text-lg transition-colors duration-300 ${
                     theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
                   }`}>
-                    Most popular reads
+                    Fun and educational stories for young readers
                   </p>
                 </div>
 
                 <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-                  {group2.map((magazine) => (
+                  {childrenDigests.map((digest) => (
                     <Link
-                      key={magazine.id}
-                      href={`/content/${magazine.id}`}
+                      key={digest.id}
+                      href={`/content/${digest.id}`}
                       className={`group flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.01] ${
                         theme === 'dark' 
                           ? 'bg-gradient-to-br from-section-background to-gray-900 border border-gray-800 hover:border-accent-gold' 
@@ -318,7 +366,7 @@ const HomeClient: React.FC = () => {
                       }`}
                     >
                       <div className="relative w-full sm:w-32 md:w-40 lg:w-48 h-48 sm:h-32 md:h-40 lg:h-48 flex-shrink-0 overflow-hidden">
-                        {magazine.rating >= 4.8 && (
+                        {digest.rating >= 4.8 && (
                           <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-20">
                             <span className="px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold bg-accent-gold text-button-text shadow-lg">
                               ⭐ Premium
@@ -326,8 +374,8 @@ const HomeClient: React.FC = () => {
                           </div>
                         )}
                         <Image
-                          src={magazine.imagePath}
-                          alt={`${magazine.title} - ${magazine.description.substring(0, 100)}`}
+                          src={digest.imagePath}
+                          alt={`${digest.title} - ${digest.description.substring(0, 100)}`}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 40vw, 192px"
@@ -339,20 +387,20 @@ const HomeClient: React.FC = () => {
                             <h3 className={`font-bold text-base sm:text-lg lg:text-xl mb-1 sm:mb-2 line-clamp-2 transition-colors duration-300 group-hover:text-accent-gold flex-1 ${
                               theme === 'dark' ? 'text-highlight-text' : 'text-light-highlight-text'
                             }`}>
-                              {magazine.title}
+                              {digest.title}
                             </h3>
                             <span className={`px-2 py-1 rounded-full text-[9px] sm:text-xs font-semibold backdrop-blur-md flex-shrink-0 ${
                               theme === 'dark' 
                                 ? 'bg-black/50 text-accent-gold border border-accent-gold/30' 
                                 : 'bg-white/80 text-accent-gold border border-accent-gold/30'
                             }`}>
-                              {magazine.category}
+                              {digest.category}
                             </span>
                           </div>
                           <p className={`text-xs sm:text-sm lg:text-base line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4 transition-colors duration-300 ${
                             theme === 'dark' ? 'text-primary-text' : 'text-light-primary-text'
                           }`}>
-                            {magazine.description}
+                            {digest.description}
                           </p>
                         </div>
                         <div className="flex items-center justify-between text-[10px] sm:text-xs">
@@ -362,13 +410,13 @@ const HomeClient: React.FC = () => {
                                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                                 <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                               </svg>
-                              {formatNumber(magazine.views)}
+                              {formatNumber(digest.views)}
                             </span>
                             <span className={`flex items-center gap-0.5 sm:gap-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                               <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                               </svg>
-                              {formatNumber(magazine.likes)}
+                              {formatNumber(digest.likes)}
                             </span>
                           </div>
                           <span className={`flex items-center gap-0.5 sm:gap-1 font-semibold ${
@@ -377,7 +425,7 @@ const HomeClient: React.FC = () => {
                             <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" fill="currentColor" viewBox="0 0 20 20">
                               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
-                            {magazine.rating}
+                            {digest.rating}
                           </span>
                         </div>
                       </div>
