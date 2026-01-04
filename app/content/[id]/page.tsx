@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useMagazine } from '@/hooks/useMagazine';
-import LoadingSpinner from '@/components/UI/LoadingSpinner';
+import ContentLoader from '@/components/UI/ContentLoader';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
 import Image from 'next/image';
 import { StructuredData } from '@/components/SEO/StructuredData';
@@ -143,6 +143,51 @@ const hardcodedMagazines = [
     likes: 1980,
     rating: 4.8,
     date: '2024-12-05'
+  },
+  // Children's Digests
+  {
+    id: 'adventures-wonderland',
+    title: 'Paigam For Kids',
+    description: 'A magical journey through enchanting stories that spark imagination and creativity. This delightful digest features colorful characters, exciting adventures, and valuable life lessons that inspire young readers to dream big and explore the world around them.',
+    imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1755120079051-v3eqssv4yw.jpg',
+    category: 'Children',
+    views: 15200,
+    likes: 1120,
+    rating: 4.9,
+    date: '2024-01-20'
+  },
+  {
+    id: 'fun-learning-stories',
+    title: 'Fun Learning Stories',
+    description: 'Educational tales that make learning enjoyable and engaging for young minds. This digest combines fun narratives with important concepts, helping children develop reading skills while discovering new ideas about science, nature, friendship, and everyday adventures.',
+    imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1754468368740-6v5vpx5w3li.jpg',
+    category: 'Children',
+    views: 18900,
+    likes: 1450,
+    rating: 4.8,
+    date: '2024-02-15'
+  },
+  {
+    id: 'magical-tales-collection',
+    title: 'Magical Tales Collection',
+    description: 'Enchanting stories filled with wonder, friendship, and adventure. This collection brings together timeless tales that capture the hearts of young readers, featuring brave heroes, magical creatures, and exciting quests that teach important values like kindness, courage, and empathy.',
+    imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1754705416524-jgx366ewqks.jpg',
+    category: 'Children',
+    views: 22100,
+    likes: 1780,
+    rating: 5.0,
+    date: '2024-03-10'
+  },
+  {
+    id: 'kids-corner-adventures',
+    title: 'Kids Corner Adventures',
+    description: 'Exciting stories designed to inspire young minds and foster curiosity. This digest features age-appropriate content that encourages exploration, creativity, and learning through engaging narratives, interactive elements, and beautiful illustrations that make reading a joyful experience.',
+    imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1754705612592-h11yf0v64wq.jpg',
+    category: 'Children',
+    views: 16700,
+    likes: 1320,
+    rating: 4.7,
+    date: '2024-04-05'
   }
 ];
 
@@ -173,7 +218,7 @@ const ContentDetail: React.FC = () => {
         downloads: 0,
         rating: hardcodedMag.rating,
         type: 'free',
-        magazineType: 'magazine',
+        magazineType: hardcodedMag.category === 'Children' ? 'digest' : 'magazine',
         reviews: [],
         createdAt: hardcodedMag.date
       });
@@ -197,13 +242,7 @@ const ContentDetail: React.FC = () => {
   };
 
   if (loading || apiLoading) {
-    return (
-      <div className={`min-h-screen transition-colors duration-300 ${
-        theme === 'dark' ? 'bg-primary-background' : 'bg-light-primary-background'
-      }`}>
-        <LoadingSpinner text="Loading content..." />
-      </div>
-    );
+    return <ContentLoader text="Loading content..." />;
   }
 
   if ((apiError && !magazine) || !magazine) {

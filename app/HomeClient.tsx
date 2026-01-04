@@ -164,7 +164,7 @@ const HomeClient: React.FC = () => {
   const childrenDigests: Magazine[] = [
     {
       id: 'adventures-wonderland',
-      title: 'Adventures in Wonderland',
+      title: 'Paigam For Kids',
       description: 'A magical journey through enchanting stories that spark imagination and creativity. This delightful digest features colorful characters, exciting adventures, and valuable life lessons that inspire young readers to dream big and explore the world around them.',
       imagePath: 'https://pub-b8050509235e4bcca261901d10608e30.r2.dev/covers/1755120079051-v3eqssv4yw.jpg',
       category: 'Children',
