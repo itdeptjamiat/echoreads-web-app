@@ -80,7 +80,7 @@ export function getRegionalPriceByCountryName(name: string): RegionalPrice | und
 export function getDefaultRegionCode(): string {
   if (typeof window === 'undefined') return 'US';
   try {
-    const locale = navigator.language || (navigator as unknown as { userLanguage?: string }).userLanguage;
+    const locale = navigator.language || (navigator as unknown as { userLanguage?: string }).userLanguage || 'en-US';
     const country = locale.split('-')[1]?.toUpperCase();
     if (country && BY_CODE.has(country)) return country;
   } catch (_) {}
